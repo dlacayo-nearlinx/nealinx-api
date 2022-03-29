@@ -2,10 +2,10 @@
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
-using WebApplication3.Controllers;
+using Nearlinx.nearlinxApi.crud.Model;
 using System;
 
-namespace WebApplication3.Jwt
+namespace Nearlinx.nearlinxApi.crud.Helpers
 {
   public class JsonWebToken
   {
@@ -17,13 +17,11 @@ namespace WebApplication3.Jwt
     }
 
 
-    public string createJWT(User user)
+    public string createJWT(Auth user)
     {
       var claims = new ClaimsIdentity();
 
-      claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.name));
-      claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.id + ""));
-      claims.AddClaim(new Claim(ClaimTypes.Role, user.rol));
+      claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Username));
 
       var tokenDesc = new SecurityTokenDescriptor()
       {

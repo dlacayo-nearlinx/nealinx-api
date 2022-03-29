@@ -14,7 +14,6 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApplication3.ConsoleApp.PostgreSQL;
 using Microsoft.IdentityModel.Tokens;
 
 namespace WebApplication3
@@ -89,11 +88,6 @@ namespace WebApplication3
           ValidateAudience = false
         };
       });
-
-      /*
-      services.AddDbContext<BloggingContext>(options =>
-       options.UseNpgsql("Host=localhost;Database=my_db;Username=;Password="));
-      */
 
     }
 
