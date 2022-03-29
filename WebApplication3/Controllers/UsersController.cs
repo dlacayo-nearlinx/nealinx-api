@@ -31,7 +31,7 @@ namespace Nearlinx.nearlinxApi.crud.Controllers
     }
 
     [HttpGet("id")]
-    public ActionResult<List<User>> GetUser(int id)
+    public ActionResult<User> GetUser(int id)
     {
       var users = UserService.GetInstance();
       return Ok(users.GetUser(id));
